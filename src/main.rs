@@ -1,3 +1,4 @@
+pub mod parser;
 use clap::Parser;
 
 /// Simple program to greet a person
@@ -14,9 +15,14 @@ struct Args {
 }
 
 fn main() {
-    let args = Args::parse();
-
-    for _ in 0..args.count {
-        println!("Hello {}!", args.name)
-    }
+    // let args = Args::parse();
+    //
+    // for _ in 0..args.count {
+    //     println!("Hello {}!", args.name)
+    // }
+    let output = parser::parse();
+    println!(
+        "{} {}",
+        output.main.project_dir, output.main.language_seperated
+    );
 }
