@@ -1,4 +1,8 @@
+pub mod fzf;
 pub mod parser;
+
+use std::fs;
+
 use clap::Parser;
 
 /// Simple program to greet a person
@@ -20,9 +24,14 @@ fn main() {
     // for _ in 0..args.count {
     //     println!("Hello {}!", args.name)
     // }
-    let output = parser::parse();
-    println!(
-        "{} {}",
-        output.main.project_dir, output.main.language_seperated
-    );
+    let config = parser::parse();
+
+    let project_dirs = fs::read_dir(config.main.project_dir).unwrap();
+    let mut options: Vec<String> = Vec::new();
+    for project_dir in project_dirs {
+        options.push(project_dir.unwrap().path().display().to_string());
+    }
+
+    let output = fzf::choose(options);
+    print!("{output}");
 }
