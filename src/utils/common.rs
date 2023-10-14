@@ -3,8 +3,8 @@ use std::fs;
 use std::path::{Path, PathBuf};
 use toml;
 
-pub fn read_file(path: String) -> Result<String, std::io::Error> {
-    let file_path = Path::new(&path);
+pub fn read_file(path: &String) -> Result<String, std::io::Error> {
+    let file_path = Path::new(path);
 
     fs::read_to_string(file_path)
 }
@@ -33,7 +33,7 @@ where
     }
 }
 
-pub fn read_toml<T>(file_path: String) -> Option<T>
+pub fn read_toml<T>(file_path: &String) -> Option<T>
 where
     T: serde::de::DeserializeOwned + std::fmt::Debug,
 {

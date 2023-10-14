@@ -28,9 +28,9 @@ pub struct Environment {
 
 impl LanguageConfig {
     pub fn new(project_path: &String) -> Self {
-        let config_path = Self::get_config_path(project_path);
+        let config_path = Self::get_project_config_path(project_path);
         let config: Option<LanguageConfig> = if let Some(config_path) = config_path {
-            common::read_toml(config_path)
+            common::read_toml(&config_path)
         } else {
             None
         };
@@ -52,13 +52,13 @@ impl LanguageConfig {
         }
     }
 
-    fn get_config_path(project_path: &String) -> Option<String> {
-        let config_path = common::create_path(&[
-            project_path,
-            &format!(".{}", constants::BRAND),
-            &constants::APP,
-            "config.toml",
+    fn get_project_config_path(project_path: &String) -> Option<String> {
+        let project_config_suffix = common::create_path(&[
+            constants::BRAND,
+            format!("{}.toml", constants::APP).as_str(),
         ]);
+
+        let config_path = common::create_path(&[project_path, &project_config_suffix]);
 
         if common::path_exists(&config_path) {
             Some(config_path)

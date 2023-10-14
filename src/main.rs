@@ -4,7 +4,7 @@ pub mod utils;
 use std::fs;
 
 fn main() {
-    let sys_details = utils::constants::SystemDetails::new();
+    let sys_details = utils::system::SystemDetails::new();
     let config = config::Config::new(&sys_details);
 
     let mut options: Vec<String> = Vec::new();
