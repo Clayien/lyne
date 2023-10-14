@@ -1,6 +1,6 @@
 [package]
 name = "lyne"
-version = "0.0.1-alpha"
+version = "0.0.1-alpha.1"
 edition = "2021"
 authors = ["SymphonySimper"]
 description = "A tool to improve local dx"
