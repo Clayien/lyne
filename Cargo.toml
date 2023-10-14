@@ -1,7 +1,10 @@
 [package]
-name = "dev"
-version = "0.1.0"
+name = "lyne"
+version = "0.0.1-alpha"
 edition = "2021"
+authors = ["SymphonySimper"]
+description = "A tool to improve local dx"
+repository = "https://github.com/Clayien/lyne"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

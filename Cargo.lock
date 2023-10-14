@@ -97,16 +97,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "acbf1af155f9b9ef647e42cdc158db4b64a1b61f743629225fde6f3e0be2a7c7"
 
 [[package]]
-name = "dev"
-version = "0.1.0"
-dependencies = [
- "clap",
- "serde",
- "serde_json",
- "toml",
-]
-
-[[package]]
 name = "equivalent"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -139,6 +129,16 @@ name = "itoa"
 version = "1.0.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "af150ab688ff2122fcef229be89cb50dd66af9e01a4ff320cc137eecc9bacc38"
+
+[[package]]
+name = "lyne"
+version = "0.0.1-alpha"
+dependencies = [
+ "clap",
+ "serde",
+ "serde_json",
+ "toml",
+]
 
 [[package]]
 name = "memchr"
