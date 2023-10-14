@@ -54,7 +54,7 @@ impl LanguageConfig {
 
     fn get_project_config_path(project_path: &String) -> Option<String> {
         let project_config_suffix = common::create_path(&[
-            constants::BRAND,
+            format!(".{}", constants::BRAND).as_str(),
             format!("{}.toml", constants::APP).as_str(),
         ]);
 
