@@ -1,6 +1,6 @@
 # Install
 ```sh
-cargo install lyne --version 0.0.1-alpha
+cargo install lyne --version 0.0.1-alpha.2
 ```
 
 # bash/ zsh
