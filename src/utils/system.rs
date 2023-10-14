@@ -23,13 +23,20 @@ impl SystemDetails {
             "windows" => OS::Windows,
             _ => panic!("Unsupported OS"),
         };
-        let home = env::var("HOME").unwrap();
+        let home = Self::get_home(&os);
         let config_path = Self::get_config_path(&os, &home);
 
         Self {
             os,
             home,
             config_path,
+        }
+    }
+
+    fn get_home(os: &OS) -> String {
+        match os {
+            OS::Windows => env::var("USERPROFILE").unwrap(),
+            _ => env::var("HOME").unwrap(),
         }
     }
 
