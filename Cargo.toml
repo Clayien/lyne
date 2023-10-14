@@ -5,6 +5,7 @@ edition = "2021"
 authors = ["SymphonySimper"]
 description = "A tool to improve local dx"
 repository = "https://github.com/Clayien/lyne"
+license = "MIT"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
